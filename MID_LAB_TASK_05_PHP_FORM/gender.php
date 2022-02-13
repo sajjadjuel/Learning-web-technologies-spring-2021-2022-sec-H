@@ -30,9 +30,9 @@
 			<legend >Gender</legend>
 			<tr>
 				<td>
-						<input type="radio" name="gender" value="Male<? if ($gen=="Male") echo "checked"; ?>"> Male
-						<input type="radio" name="gender" value="Female<? if ($gen=="Female") echo "checked"; ?>"> Female
-						<input type="radio" name="gender" value="Other<? if ($gen=="Other") echo "checked"; ?>"> Other
+						<input type="radio" name="gender" value="Male"<?php if (isset($_POST['gender']) && $_POST['gender'] == "Male") echo "checked";?>/> Male
+						<input type="radio" name="gender" value="Female"<?php if (isset($_POST['gender']) && $_POST['gender'] == "Female") echo "checked";?>/> Female
+						<input type="radio" name="gender" value="Other"<?php if (isset($_POST['gender']) && $_POST['gender'] == "Other") echo "checked";?>/> Other
 				
 		</fieldset><br>
 				</td>

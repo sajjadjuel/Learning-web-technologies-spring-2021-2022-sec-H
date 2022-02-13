@@ -12,7 +12,6 @@
 			$berror= "Invalid Choice";
 		}else{
 			 $bld = $_REQUEST['blood'];
-			 echo $bld;
 		}
 	}	
 ?>
@@ -32,14 +31,14 @@
 			
 					    <select name="blood">
 					    	<option value=""></option>
-							<option value="A+">A+</option>
-							<option value="B+">B+</option>
-							<option value="AB+">AB+</option>
-							<option value="A-">A-</option>
-							<option value="B-">B-</option>
-							<option value="AB-">AB-</option>
-							<option value="O+">O+</option>
-							<option value="O-">O-</option>
+							<option value="A+"<?php if(isset($_REQUEST['blood']) && $_REQUEST['blood']=='A+') echo "selected='selected'" ?>/>A+</option>
+							<option value="B+"<?php if(isset($_REQUEST['blood']) && $_REQUEST['blood']=='B+') echo "selected='selected'" ?>/>B+</option>
+							<option value="AB+"<?php if(isset($_REQUEST['blood']) && $_REQUEST['blood']=='AB+') echo "selected='selected'" ?>/>AB+</option>
+							<option value="A-"<?php if(isset($_REQUEST['blood']) && $_REQUEST['blood']=='A-') echo "selected='selected'" ?>/>A-</option>
+							<option value="B-"<?php if(isset($_REQUEST['blood']) && $_REQUEST['blood']=='B-') echo "selected='selected'" ?>/>B-</option>
+							<option value="AB-"<?php if(isset($_REQUEST['blood']) && $_REQUEST['blood']=='AB-') echo "selected='selected'" ?>/>AB-</option>
+							<option value="O+"<?php if(isset($_REQUEST['blood']) && $_REQUEST['blood']=='O+') echo "selected='selected'" ?>/>O+</option>
+							<option value="O-"<?php if(isset($_REQUEST['blood']) && $_REQUEST['blood']=='O-') echo "selected='selected'" ?>/>O-</option>
 						</select><br>
 						<hr>
 		<input type="submit" name="submit" value="Submit"></td>
