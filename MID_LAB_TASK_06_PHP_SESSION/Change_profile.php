@@ -40,7 +40,7 @@ session_start();
 
 <html>
 <head>
-	<title>First HTML Site</title>
+	<title>EDIT PROFILE</title>
 </head>
 <body>
 <pre>

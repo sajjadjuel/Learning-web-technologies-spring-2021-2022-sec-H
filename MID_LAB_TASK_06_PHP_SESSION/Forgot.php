@@ -26,7 +26,7 @@ session_start();
 
 <html>
 <head>
-	<title>First HTML Site</title>
+	<title>FORGOT PASSWORD</title>
 </head>
 <body>
 <pre>

@@ -22,7 +22,7 @@ session_start();
 
 <html>
 <head>
-	<title>First HTML Site</title>
+	<title>PROFILE</title>
 </head>
 <body>
 <pre>

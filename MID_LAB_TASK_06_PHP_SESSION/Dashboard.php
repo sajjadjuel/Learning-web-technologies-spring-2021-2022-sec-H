@@ -19,7 +19,7 @@ session_start();
 
 <html>
 <head>
-	<title>First HTML Site</title>
+	<title>DASHBOARD</title>
 </head>
 <body>
 <pre>

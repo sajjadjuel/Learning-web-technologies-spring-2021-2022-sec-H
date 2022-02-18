@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>First HTML Site</title>
+	<title>XCompany</title>
 </head>
 <body>
 <pre>

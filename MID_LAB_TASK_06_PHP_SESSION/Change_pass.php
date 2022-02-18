@@ -42,7 +42,7 @@ session_start();
 
 <html>
 <head>
-	<title>First HTML Site</title>
+	<title>CHANGE PASSWORD</title>
 </head>
 <body>
 <pre>
