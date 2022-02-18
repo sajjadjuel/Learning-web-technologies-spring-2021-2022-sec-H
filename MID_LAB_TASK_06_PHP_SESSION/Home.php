@@ -1,6 +1,3 @@
-<?php 
-	?>
-
 <html>
 <head>
 	<title>First HTML Site</title>
@@ -13,7 +10,7 @@
 				<td align="left"> <h1>XCompany</h1></td>
 				<td align="right" colspan="2"> 
 					<a href="home.php">Home|</a>
-					<a href="">Login|</a>
+					<a href="Login.php">Login|</a>
 					<a href="Reg.php">Registration</a>
 				</td>
 			</tr>
