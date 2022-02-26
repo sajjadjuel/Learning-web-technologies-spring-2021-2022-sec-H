@@ -1,3 +1,21 @@
+<?php
+
+	if(isset($_COOKIE['status'])){
+		//$username =  $_REQUEST['username'];
+		$file = fopen('../model/user.txt', 'r');
+		while(!feof($file)){
+			$user = fgets($file);
+			$userArray = explode('|', $user);
+
+			/*if(trim($userArray[0]) == $username){
+				$editUser = $userArray;
+				break;
+			}*/
+	}
+}
+
+?>
+
 <html>
 <head>
 	<title>Add User</title>

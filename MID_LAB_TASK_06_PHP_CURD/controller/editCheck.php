@@ -2,31 +2,36 @@
 	session_start();
 
 	if(isset($_REQUEST['submit'])){
-		$id =  $_GET['id'];
-	$file = fopen('../model/user.txt', 'r');
-	while(!feof($file)){
-		$user = fgets($file);
-		$userArray = explode('|', $user);
+			$file = fopen('../model/user.txt', 'r');
+			while(!feof($file))
+			{
+				$user = fgets($file);
+				$userArray = explode('|', $user);
+				if(trim($userArray[0]) == $_REQUEST['id'])
+					{
+						$id=$userArray[0];
+						$userArray[1]=$_REQUEST['username'];
+						$userArray[2]=$_REQUEST['password'];
+						$userArray[3]=$_REQUEST['email'];
 
-		if(trim($userArray[0]) == $id){
-			$editUser = $userArray;
-			break;
-		}
-	}
-		if($username != null && $password != null && $email != null){
-			
-			//$user = ['username'=>$username, 'password'=>$password, 'email'=>$email];
-			//$_SESSION['user'] = $user;
+						if($userArray[1] != null && $userArray[2] != null && $userArray[3] != null){
 
-			$user = $username."|".$password."|".$email."\r\n";
-			$file = fopen("../model/user.txt", 'a');
-			fwrite($file, $user);
-			fclose($file);
-			
-			header('location: ../views/login.php');
+							$userArray = $id."|".$userArray[1]."|".$userArray[2]."|".$userArray[3]."\r\n";
+							$file = fopen("../model/user.txt", 'w');
+							fwrite($file, $userArray);
+							fclose($file);
+							
+							header('location: ../views/login.php');
 
-		}else{
-			echo "null submission..";
-		}
+						}else{
+							echo "null submission..";
+						}
+
+
+					}
+
+			}
+
+		
 	}	
 ?>

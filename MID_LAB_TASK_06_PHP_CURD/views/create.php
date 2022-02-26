@@ -15,7 +15,7 @@
 	<a href="home.php"> Back </a> |
 	<a href="../controller/logout.php"> Logout </a>
 
-	<form method="POST" action="">
+	<form method="POST" action="../controller/regCheck.php">
 		<fieldset>
 			<legend>Add New</legend>
 			<table>

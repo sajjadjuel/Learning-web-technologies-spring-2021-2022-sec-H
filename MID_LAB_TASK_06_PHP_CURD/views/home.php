@@ -1,5 +1,6 @@
 <?php 
-	session_start();
+	//session_start();
+	include('header.php');
 	if(!isset($_COOKIE['status'])){
 		header('location: login.php');
 	}

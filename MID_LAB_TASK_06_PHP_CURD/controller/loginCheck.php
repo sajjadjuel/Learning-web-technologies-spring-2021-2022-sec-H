@@ -1,25 +1,37 @@
 <?php 
-	session_start();
+	//session_start();
+	include('header.php');
 
 	if(isset($_REQUEST['submit'])){
-		$username = $_REQUEST['username'];
-		$password = $_REQUEST['password'];
+		$username =  $_REQUEST['username'];
+		$file = fopen('../model/user.txt', 'r');
+		while(!feof($file)){
+			$user = fgets($file);
+			$userArray = explode('|', $user);
 
-		if($username != null && $password != null){
+			if(trim($userArray[1]) == $username){
+				$editUser = $userArray;
+				break;
+			}
+	}
+		//$username = $editUser[1];
+		//$password = $editUser[2];
+
+		if($_REQUEST['username']!= null && $_REQUEST['password']!= null){
 		
 			/*if(isset($_SESSION['user'])){
 				$user = $_SESSION['user'];
 			}*/
-
+/*
 			$file = fopen('../model/user.txt', 'r');
 			$user = fread($file, filesize('../model/user.txt'));
 			//fgets()
 
 			fclose($file);
 			$abc = explode('|', $user);
-			//print_r($abc);
+			//print_r($abc);*/
 				
-			if(trim($abc[0]) == $username && trim($abc[1]) == $password){
+			if(trim($_REQUEST['username']) == $editUser[1] && trim($_REQUEST['password']) == $editUser[2]){
 				$_SESSION['status'] = 'true';
 				setcookie('status', 'true', time()+3600, '/');
 				

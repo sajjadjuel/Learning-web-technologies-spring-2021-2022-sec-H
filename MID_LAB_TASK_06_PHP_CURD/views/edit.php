@@ -1,6 +1,6 @@
 <?php 
 
-	$id =  $_GET['id'];
+	$id =  $_REQUEST['id'];
 	$file = fopen('../model/user.txt', 'r');
 	while(!feof($file)){
 		$user = fgets($file);
@@ -9,7 +9,8 @@
 		if(trim($userArray[0]) == $id){
 			$editUser = $userArray;
 			break;
-		}
+		}	
+
 	}
 ?>
 
@@ -22,7 +23,7 @@
 	<a href="home.php"> Back </a> |
 	<a href="../controller/logout.php"> Logout </a>
 
-	<form method="POST" action="">
+	<form method="POST" action="../controller/editCheck.php?id=<?=$id?>">
 		<fieldset>
 			<legend>Edit User</legend>
 			<table>
