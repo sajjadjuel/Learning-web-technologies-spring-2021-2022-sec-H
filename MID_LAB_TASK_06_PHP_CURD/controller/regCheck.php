@@ -11,8 +11,8 @@
 			//$user = ['username'=>$username, 'password'=>$password, 'email'=>$email];
 			//$_SESSION['user'] = $user;
 
-			$user = $username."|".$password."|".$email."\r\n";
-			$file = fopen("../model/user.txt", 'a');
+			$user = $username."|".$password."|".$email;
+			$file = fopen("../model/user.txt", 'w');
 			fwrite($file, $user);
 			fclose($file);
 			
