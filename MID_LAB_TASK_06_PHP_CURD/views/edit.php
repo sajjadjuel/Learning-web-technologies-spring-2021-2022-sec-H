@@ -1,5 +1,5 @@
 <?php 
-
+include('header.php');
 	$id =  $_REQUEST['id'];
 	$file = fopen('../model/user.txt', 'r');
 	while(!feof($file)){

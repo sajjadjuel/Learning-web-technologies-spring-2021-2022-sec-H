@@ -1,37 +1,35 @@
 <?php 
-	session_start();
-
+	include('header.php');
+	
 	if(isset($_REQUEST['submit'])){
+		
+		$username = $_REQUEST['username'];
+		$password = $_REQUEST['password'];
+		$email = $_REQUEST['email'];
+		$id = $_REQUEST['id'];
+
+		if($username != null && $password != null && $email != null){
+			
 			$file = fopen('../model/user.txt', 'r');
-			while(!feof($file))
-			{
-				$user = fgets($file);
-				$userArray = explode('|', $user);
-				if(trim($userArray[0]) == $_REQUEST['id'])
-					{
-						$id=$userArray[0];
-						$userArray[1]=$_REQUEST['username'];
-						$userArray[2]=$_REQUEST['password'];
-						$userArray[3]=$_REQUEST['email'];
+			$fuser = "";
 
-						if($userArray[1] != null && $userArray[2] != null && $userArray[3] != null){
-
-							$userArray = $id."|".$userArray[1]."|".$userArray[2]."|".$userArray[3]."\r\n";
-							$file = fopen("../model/user.txt", 'w');
-							fwrite($file, $userArray);
-							fclose($file);
-							
-							header('location: ../views/login.php');
-
-						}else{
-							echo "null submission..";
-						}
-
-
-					}
-
+			while(!feof($file)){
+				$upUser = fgets($file);
+				$user = explode('|', $upUser);
+				
+				if($user[0] == $id){
+					$upUser = $id."|".$username."|".$password."|".$email."\r\n";
+				}
+				$fuser .= $upUser;
+				
 			}
 
-		
-	}	
+			$file = fopen('../model/user.txt', 'w');
+			fwrite($file, $fuser);
+			header('location: ../views/userlist.php');
+
+		}else{
+			echo "null submission";
+		}
+	}
 ?>

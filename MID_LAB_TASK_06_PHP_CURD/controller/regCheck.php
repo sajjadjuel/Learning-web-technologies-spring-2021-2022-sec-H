@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	$id="1";
 
 	if(isset($_REQUEST['submit'])){
 			$file = fopen('../model/user.txt', 'r');

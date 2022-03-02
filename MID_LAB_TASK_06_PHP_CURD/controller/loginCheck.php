@@ -1,35 +1,21 @@
 <?php 
-	//session_start();
 	include('header.php');
 
 	if(isset($_REQUEST['submit'])){
 		$username =  $_REQUEST['username'];
 		$file = fopen('../model/user.txt', 'r');
-		while(!feof($file)){
-			$user = fgets($file);
-			$userArray = explode('|', $user);
+		while(!feof($file))
+			{
+				$user = fgets($file);
+				$userArray = explode('|', $user);
 
-			if(trim($userArray[1]) == $username){
-				$editUser = $userArray;
-				break;
-			}
-	}
-		//$username = $editUser[1];
-		//$password = $editUser[2];
-
+				if(trim($userArray[1]) == $username){
+					$editUser = $userArray;
+					break;
+				}
+		}
 		if($_REQUEST['username']!= null && $_REQUEST['password']!= null){
 		
-			/*if(isset($_SESSION['user'])){
-				$user = $_SESSION['user'];
-			}*/
-/*
-			$file = fopen('../model/user.txt', 'r');
-			$user = fread($file, filesize('../model/user.txt'));
-			//fgets()
-
-			fclose($file);
-			$abc = explode('|', $user);
-			//print_r($abc);*/
 				
 			if(trim($_REQUEST['username']) == $editUser[1] && trim($_REQUEST['password']) == $editUser[2]){
 				$_SESSION['status'] = 'true';

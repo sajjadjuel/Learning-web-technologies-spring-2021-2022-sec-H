@@ -1,4 +1,3 @@
-
 <html>
 <head>
 	<title>Login page</title>
@@ -20,6 +19,7 @@
 				<tr>
 					<td></td>
 					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><a href="reg.php">Registration</a></td>
 				</tr>
 			</table>
 		</fieldset>
