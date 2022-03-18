@@ -100,7 +100,7 @@
 			if(trim($_REQUEST['username']) == $editUser[1] && trim($_REQUEST['password']) == $editUser[2]){
 				$_SESSION['status'] = 'true';
 				setcookie('status', 'true', time()+3600, '/');
-				echo "Freelancher Login Successful";
+				header('location: ../views/Fdashboard.php?name='.$editUser[1]);
 			}else{
 				echo "invalid username/password";
 			}

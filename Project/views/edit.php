@@ -44,7 +44,7 @@ include('header.php');
 						<input type="radio" name="gender" value="Male"
 						  <?php if (isset($editUser[4]) && $editUser[4] == "Male") echo "checked";?>> Male
 						<input type="radio" name="gender" value="Female"
-						  <?php if (isset($editUser[4]) && $editUser[4] == "Feale") echo "checked";?>> Female
+						  <?php if (isset($editUser[4]) && $editUser[4] == "Female") echo "checked";?>> Female
 						<input type="radio" name="gender" value="Other"
 						  <?php if (isset($editUser[4]) && $editUser[4] == "Other") echo "checked";?>> Other									
 					</td>

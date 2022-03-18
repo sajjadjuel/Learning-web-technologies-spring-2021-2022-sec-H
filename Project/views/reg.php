@@ -8,6 +8,7 @@
 	<center>
 	 <h1  style="width:100%;background-color:mediumseagreen;text-align: right; word-spacing: 15px;">
 		 	<a href="Dashboard.php" style="color: white; ">Home</a>
+		 	<a href="singUp.html" style="color: white;">Registration as Freelancer</a>
 		</h1>
 	</center>
 	<form method="POST" action="../controller/regCheck.php">
